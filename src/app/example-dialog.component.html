@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h4 class="modal-title font-weight-bold">
+        Modal title
+    </h4>
+</div>
+<div class="modal-header">
+    <h4 class="modal-title font-weight-bold">
+        <i class="fas fa-otter mr-1"></i>{{someInput1}}
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="card-deck">
+        <div>
+            <div class="card-body">
+                <h5 class="card-title">Number of spikes: {{someInput2.spikes}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+  <button id="button_cancel" class="btn btn-sm btn-outline-danger" (click)="close()">
+    <i class="fas fa-times mr-1"></i>Cancel
+  </button>
+  <button id="button_update" class="btn btn-sm btn-primary" (click)="submit()">
+    <i class="fas fa-checkmark mr-1"></i>Submit
+  </button>
+</div>

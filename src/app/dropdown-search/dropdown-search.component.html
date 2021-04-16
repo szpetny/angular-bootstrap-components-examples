@@ -1,0 +1,25 @@
+<div class="input-group mb-3">
+    <input type="text" [name]="searchInputName" [id]="searchInputId" class="form-control"
+        [placeholder]="searchInputPlaceholder" [attr.data-aria-label]="searchInputLabel" aria-describedby="button-addon"
+        autocomplete="off" #searchInput>
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary rounded-right" type="button" id="button-addon">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <div [ngClass]="{'dropdown-menu': true, 'show': options?.length > 0 || displayError || displayNoResultsMessage}">
+        <a *ngIf="displayError" class="dropdown-item">{{errorMessage}}</a>
+        <a *ngIf="displayNoResultsMessage" class="dropdown-item">Your search returned no results</a>
+        <ng-container *ngFor="let option of options; let inx = index;">
+            <a *ngIf="!displayError && !displayNoResultsMessage && (maxResults === -1 || inx < maxResults)"
+                class="dropdown-item" (click)="selectOption(option)">
+                <div class="template-wrapper">
+                    <ng-container *ngTemplateOutlet="optionTemplate; context: {option: option}"></ng-container>
+                </div>
+                <div class="default">
+                    <i class="fas fa-user-astronaut mr-1"></i>{{option}}
+                </div>
+            </a>
+        </ng-container>
+    </div>
+</div>

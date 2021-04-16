@@ -1,0 +1,79 @@
+:host {
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    position: fixed;
+    z-index: 1000;
+}
+:host > .arrow {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 11px;
+}
+:host > .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 10px;
+    content: "";
+}
+:host(.top) > .arrow {
+    left: 50%;
+    margin-left: -11px;
+    border-bottom-width: 0;
+    border-top-color: #ccc;
+    bottom: -11px;
+}
+:host(.top) > .arrow:after {
+    bottom: 1px;
+    margin-left: -10px;
+    border-bottom-width: 0;
+    border-top-color: #fff;
+}
+:host(.bottom) > .arrow {
+    left: 50%;
+    margin-left: -11px;
+    border-top-width: 0;
+    border-bottom-color: #ccc;
+    top: -11px;
+}
+:host(.bottom) > .arrow:after {
+    top: 1px;
+    margin-left: -10px;
+    border-top-width: 0;
+    border-bottom-color: #fff;
+}
+:host(.right) > .arrow {
+    top: 50%;
+    left: -11px;
+    margin-top: -11px;
+    border-left-width: 0;
+    border-right-color: #ccc;
+}
+:host(.right) > .arrow:after {
+    left: 1px;
+    bottom: -10px;
+    border-left-width: 0;
+    border-right-color: #fff;
+}
+:host(.left) > .arrow {
+    top: 50%;
+    right: -11px;
+    margin-top: -11px;
+    border-right-width: 0;
+    border-left-color: #ccc;
+}
+:host(.left) > .arrow:after {
+    right: 1px;
+    bottom: -10px;
+    border-right-width: 0;
+    border-left-color: #fff;
+}
